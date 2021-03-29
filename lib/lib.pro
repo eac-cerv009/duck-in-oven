@@ -9,12 +9,14 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+INCLUDEPATH += src
+
 SOURCES += \
-    handler.cpp
+    src/handler.cpp
 
 HEADERS += \
-    lib_global.h \
-    handler.h
+    src/lib_global.h \
+    src/handler.h
 
 # Default rules for deployment.
 unix {
