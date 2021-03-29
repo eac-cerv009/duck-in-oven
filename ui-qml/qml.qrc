@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>views/MainScreen.qml</file>
+        <file>views/panels/LeftPanel.qml</file>
+        <file>views/panels/CenterPanel.qml</file>
+        <file>views/panels/RightPanel.qml</file>
+        <file>views/panels/TopBarPanel.qml</file>
     </qresource>
 </RCC>

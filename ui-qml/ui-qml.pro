@@ -11,7 +11,8 @@ INCLUDEPATH += src
 SOURCES += \
         src/main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+  assets.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =  $$PWD
@@ -23,3 +24,9 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+  views/panels/CenterPanel.qml \
+  views/panels/LeftPanel.qml \
+  views/panels/RightPanel.qml \
+  views/panels/TopBarPanel.qml
