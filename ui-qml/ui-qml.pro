@@ -36,4 +36,5 @@ DISTFILES += \
   views/panels/CenterPanel.qml \
   views/panels/LeftPanel.qml \
   views/panels/RightPanel.qml \
-  views/panels/TopBarPanel.qml
+  views/panels/TopBarPanel.qml \
+  views/panels/BottomBarPanel.qml
