@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>views/MainScreen.qml</file>
-        <file>views/DefaultState.qml</file>
+        <file>views/DefaultView.qml</file>
         <file>views/CookBook.qml</file>
         <file>views/ManualBake.qml</file>
         <file>views/ManualTemperature.qml</file>
