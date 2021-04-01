@@ -26,16 +26,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+  views/CameraPreviewView.qml \
+  views/CookBookView.qml \
   views/DefaultView.qml \
-  views/CookBook.qml \
-  views/ManualBake.qml \
-  views/ManualTemperature.qml \
+  views/ManualBakeView.qml \
   views/ManualTemperatureTimerTabView.qml \
-  views/ManualTimer.qml \
-  views/Running.qml \
-  views/CameraPreview.qml \
+  views/ManualTemperatureView.qml \
+  views/ManualTimerView.qml \
+  views/RunningView.qml \
   views/panels/CenterPanel.qml \
   views/panels/LeftPanel.qml \
   views/panels/RightPanel.qml \
   views/panels/TopBarPanel.qml \
-  views/panels/BottomBarPanel.qml
+  views/panels/BottomBarPanel.qml \

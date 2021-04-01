@@ -2,13 +2,13 @@
     <qresource prefix="/">
         <file>views/MainScreen.qml</file>
         <file>views/DefaultView.qml</file>
-        <file>views/CookBook.qml</file>
-        <file>views/ManualBake.qml</file>
+        <file>views/CookBookView.qml</file>
+        <file>views/ManualBakeView.qml</file>
         <file>views/ManualTemperatureTimerTabView.qml</file>
-        <file>views/ManualTemperature.qml</file>
-        <file>views/ManualTimer.qml</file>
-        <file>views/Running.qml</file>
-        <file>views/CameraPreview.qml</file>
+        <file>views/ManualTemperatureView.qml</file>
+        <file>views/ManualTimerView.qml</file>
+        <file>views/RunningView.qml</file>
+        <file>views/CameraPreviewView.qml</file>
         <file>views/panels/LeftPanel.qml</file>
         <file>views/panels/CenterPanel.qml</file>
         <file>views/panels/RightPanel.qml</file>
