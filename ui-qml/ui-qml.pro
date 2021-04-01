@@ -30,6 +30,7 @@ DISTFILES += \
   views/CookBook.qml \
   views/ManualBake.qml \
   views/ManualTemperature.qml \
+  views/ManualTemperatureTimerTabView.qml \
   views/ManualTimer.qml \
   views/Running.qml \
   views/CameraPreview.qml \
