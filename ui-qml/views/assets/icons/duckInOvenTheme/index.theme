@@ -1,0 +1,9 @@
+[Icon Theme]
+Name=duckinoven
+Comment=Icon Theme
+
+Directories=36x36,36x36@2
+
+[60x60]
+Size=60
+Type=Fixed

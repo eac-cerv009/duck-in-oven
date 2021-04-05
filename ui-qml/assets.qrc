@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/duckInOvenTheme/index.theme</file>
+        <file>icons/duckInOvenTheme/60x60/oven.png</file>
+        <file>icons/duckInOvenTheme/60x60/cookbook.png</file>
+        <file>icons/duckInOvenTheme/60x60/more.png</file>
+
+
+        <file>views/assets/images/oven.png</file>
+        <file>views/assets/images/cookbook.png</file>
+        <file>views/assets/images/more.png</file>
+        <file>views/assets/images/picture.png</file>
+        <file>views/assets/images/yay.png</file>
+        <file>views/assets/images/unicorn.png</file>
+    </qresource>
+</RCC>
