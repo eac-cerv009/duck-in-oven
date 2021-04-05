@@ -12,7 +12,8 @@
         <file>views/panels/LeftPanel.qml</file>
         <file>views/panels/CenterPanel.qml</file>
         <file>views/panels/RightPanel.qml</file>
-        <file>views/panels/TopBarPanel.qml</file>
-        <file>views/panels/BottomBarPanel.qml</file>
+        <file>views/components/TopBar.qml</file>
+        <file>views/components/BottomBar.qml</file>
+        <file>views/components/IconButton.qml</file>
     </qresource>
 </RCC>
