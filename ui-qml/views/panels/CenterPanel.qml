@@ -1,12 +1,14 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
-
+import Themes
 import "../components"
 
-Item {
+Rectangle {
 
     property var topBarHeightFactor: 0.18
     property var  bottomBarHeightFactor: 0.16
+
+    color: ColorTheme.centerPanelBackgroundColor
 
     TopBar {
         id: topBar
@@ -19,8 +21,25 @@ Item {
         }
     }
 
+    Connections {
+        target: masterController.ui_controlFlow
+        onGoCookbookView:
+            contentFrame.replace("qrc:/views/CookBookView.qml");
+        onGoManualBakeView:
+            contentFrame.replace("qrc:/views/ManualBakeView.qml");
+        onGoManualTemperatureView:
+            contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml")
+        onGoManualTimerView:
+            contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml")
+        onGoRunningView:
+            contentFrame.replace("qrc:/views/RunningView.qml")
+        onGoCameraPreview:
+            contentFrame.replace("qrc:/views/CameraPreviewView.qml")
+
+    }
+
     StackView {
-        id: centerPanel
+        id: contentFrame
 
         anchors {
             top: topBar.bottom
@@ -29,8 +48,9 @@ Item {
             right: parent.right
         }
 
-        //initialItem: "qrc:/views/DefaultView.qml"
-        initialItem: "qrc:/views/ManualTemperatureTimerTabView.qml"
+        clip: true
+
+        initialItem: "qrc:/views/DefaultView.qml"
     }
 
     BottomBar {

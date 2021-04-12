@@ -1,82 +1,94 @@
 import QtQuick 2.0
+import Themes 1.0
+import QtQuick.Controls 2.0
 import "../components"
-//import QtQuick.Controls 2.0
 
-//Item {
 Rectangle {
     id: leftPanel
 
-    width: 442; height: parent.height
-    color: "#51504F"
+    implicitWidth: 442; implicitHeight: 548
+    color: ColorTheme.sidePanelBackgroundColor
 
-// ### SoB To Debug UI
-//    Rectangle {
-//        color: "yellow"
-//        opacity: 0.3
-    Column {
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        width: 150
-
-        Button {
-            id: ovenButton
-            anchors.horizontalCenter: parent.horizontalCenter
-            iconSource: "/views/assets/images/oven.png"
+    Item {
+        id: switchArea
+        width: (parent.width / 3) * 2
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            left: parent.left
         }
 
-        Button {
-            id: cookbookButton
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
+        IconButton {
+            id: powerButton
 
-        Button {
-            id: moreButton
-            anchors.horizontalCenter: parent.horizontalCenter
+            width: 131; height: 131
+            anchors.centerIn: parent
+
+            showBorder: true
+            showBackground: true
+
+            icon.name: "power"
+            icon.width: 75
+            icon.height: 75
+
+            onClicked: masterController.ui_ovenControlState.powerButtonStateChanged
         }
     }
 
-    /*Column {
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        width: 80
+    ButtonGroup {
+        buttons: buttonsColumn.children
+    }
 
-        Button {
+    Column {
+        id: buttonsColumn
+
+        width: parent.width / 3
+
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            left: switchArea.right
+            right: parent.right
+        }
+
+        IconButton {
             id: ovenButton
-            width: 60 ; height: 60
-            flat: true
+
+            width: parent.width
+            height: parent.height / 3
+
             icon.name: "oven"
-            icon.color: "white"
-            onPressed: icon.color = "orange"
-            onClicked: icon.color = "green"
+            icon.width: 60
+            icon.height: 60
+
+            onClicked: masterController.ui_controlFlow.goRunningView()
         }
-        Button {
+
+        IconButton {
             id: cookbookButton
-            width: 60 ; height: 60
-            flat: true
-            checkable: true
+
+            width: parent.width
+            height: parent.height / 3
+
             icon.name: "cookbook"
-            icon.color: "white"
-            onPressed: icon.color = "orange"
-            onClicked: icon.color = "green"
+            icon.width: 60
+            icon.height: 60
+
+            onClicked: masterController.ui_controlFlow.goCookbookView()
         }
-        Button {
+
+        IconButton {
             id: moreButton
-            width: 60 ; height: 60
-            flat: true
+
+            width: parent.width
+            height: parent.height / 3
+
             icon.name: "more"
-            icon.color: "white"
-            onPressed: {
-                icon.color = "orange"
-//                background: Rectangle {
-//                    anchors.fill: parent
-//                    color: "transparent"
-//                    border.color: "red"
-//                }
-            }
-            onClicked: icon.color = "green"
+            icon.width: 60
+            icon.height: 60
+
+            onClicked:  masterController.ui_controlFlow.goManualBakeView()
         }
-    }*/
+    }
 
 }
