@@ -20,6 +20,7 @@ signals:
   void goDefaultView();
   void goOvenManualSet();
   void goCookbookView();
+  void goRecipe();
 
   void goManualBakeView();
   void goManualTemperatureView();

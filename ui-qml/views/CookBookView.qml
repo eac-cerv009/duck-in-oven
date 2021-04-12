@@ -40,9 +40,9 @@ Item {
         ListElement { recipe: "Beef" }
         ListElement { recipe: "Fish" }
         ListElement { recipe: "Turkey" }
-        ListElement { recipe: "Demo X" }
-        ListElement { recipe: "Demo Y" }
-        ListElement { recipe: "Demo Z" }
+//        ListElement { recipe: "Demo X" }
+//        ListElement { recipe: "Demo Y" }
+//        ListElement { recipe: "Demo Z" }
     }
 
 

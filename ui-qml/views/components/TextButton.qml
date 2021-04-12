@@ -14,7 +14,6 @@ Rectangle {
     property alias textTopMargin: textButton.anchors.topMargin
     property alias textBottomMargin: textButton.anchors.bottomMargin
 
-    property bool isButtonTriggered: false
     property bool showBorder: true
     property bool centerTextAligment: false
 
@@ -59,20 +58,8 @@ Rectangle {
         onClicked: {
             button.state == 'clicked' ?
                         button.state = "default" : button.state = 'clicked'
+            //masterController.ui_controlFlow.
 
-
-            /*isButtonTriggered = checked
-            buttontextButton.color = isButtonTriggered ? "green" : "white"
-            button.border.color = isButtonTriggered ? "green" : "white"
-            */
-            /*function changesddf(isButtonTriggered) {
-                if (isButtonTriggered)
-                    textButton.color = "green"
-                    button.border.color = "green"
-                else
-                    textButton.color = "white"
-                    button.border.color = "white"
-            }*/
         }
 
     }
