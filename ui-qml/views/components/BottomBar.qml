@@ -1,45 +1,40 @@
 import QtQuick 2.0
+import Themes 1.0
 
 Rectangle {
     id: bottomBar
 
-    color: "#393939"
+    color: ColorTheme.bottomBarBackgroundColor
 
-    Rectangle {
+    IconButton {
         id: cameraButton
-        width: 30
-        height: 30
+
+        width: 62; height: 62
 
         anchors {
             right: nextButton.left
-            verticalCenter: parent.verticalCenter
-            margins: 5
+            verticalCenter: nextButton.verticalCenter
+            rightMargin: 40
         }
-
-        radius: 15
-        color: "blue"
-        border.color: "green"
     }
 
-    Rectangle {
+    TextButton {
         id: nextButton
-        width: 70//155
-        height: 25 //62
+
+        width: 155
+        height: 62
+
         anchors {
             right: parent.right
             verticalCenter: parent.verticalCenter
-            margins: 5
+            rightMargin: 40
         }
-        color: "#51504F"
-        radius: 10
 
-        Text {
-            id: nextTextButton
-            anchors.fill: parent
-            text: qsTr("Next")
-            color: "white"
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-        }
+        radius: width / 4
+
+        showBorder: false
+        centerTextAligment: true
+        textFontSize: TextStyle.bottonBarText_fontSize
+        text: qsTr("NEXT")
     }
 }

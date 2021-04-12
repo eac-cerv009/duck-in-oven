@@ -1,80 +1,51 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
+import Themes 1.0
 
-/*Rectangle {
-    id: button
-//    x: 12; y:12
-    width: 80 ; height: 80
-//    color: "lightsteelblue"
-//    border.color: "slategrey"
-    Text {
-        anchors.centerIn: parent
-        text: "button"
-    }
+Button {
+    id: iconButton
 
-    Image {
-        id: icon
-        source: "/views/assets/images/picture.png"
-        width: 40; height: 40
-        anchors.centerIn: parent
+    property alias iconImageSource: iconButton.icon.source
+    property int iconSize: 60
+    property alias borderColor: bg.border.color
+    property alias borderWidth: bg.border.width
 
-    }
+    property bool showBorder: false
+    property bool showBackground: false
 
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            icon.source = "/views/assets/images/yay.png"
-        }
-        onPressed: {
-            icon.source = "/views/assets/images/unicorn.png"
-        }
-    }
-}*/
+    implicitWidth: 60; implicitHeight: 60
 
-AbstractButton {
-    id: button
+    width: parent.width; height: parent.height
 
-    property alias iconSource: icon.source
+    hoverEnabled: false
+    checkable: true
+    enabled: false
 
-    implicitWidth: 50
-    implicitHeight: 100
+//    leftPadding: 4
+//    rightPadding: 4
+//    topPadding: 12
+//    bottomPadding: 12
 
-    display: AbstractButton.IconOnly
-
-    contentItem: Image {
-        id: icon
-        fillMode: Image.Pad
-        source: "/views/assets/images/picture.png"
-        sourceSize { width: 60; height: 60 } // ### TODO: resize the image
-    }
-
-//    x: 12; y:12
-    width: 80 ; height: 80
-//    Rectangle {
-//        anchors.fill: parent
-//        color: "lightsteelblue"
-//        border.color: "slategrey"
-//    }
     background:     Rectangle {
-                        anchors.fill: parent
-                        color: "transparent"
-                        border.color: "red"
-                    }
-
-//    Text {
-//        anchors.centerIn: parent
-//        text: "button"
-//    }
-    text: "Aidali"
-
-    icon.name: "oven"
-
-    onPressed: {
-        icon.source = "/views/assets/images/yay.png"
+        id: bg
+        anchors.fill: parent
+        radius: width / 2
+        color: showBackground ? ColorTheme.iconButtonBackgroundColor : "transparent"
+        border {
+            color: ColorTheme.iconButtonBorderColor
+            width: showBorder ? 3 : 0
+        }
     }
 
-    onClicked: {
-        icon.source = "/views/assets/images/unicorn.png"
-    }
+    display: Button.IconOnly
+    icon.name: "placeholder"
+    icon.color: iconButton.enabled ? ColorTheme.disabledStateColor
+                              :(iconButton.pressed ? ColorTheme.pressedStateColor
+                                                   :(iconButton.checked ? ColorTheme.activedStateColor
+                                                                        : ColorTheme.defaultStateColor)
+                                    )
+
+//    icon.width: parent.width
+//    icon.height: parent.height
+
 }
-

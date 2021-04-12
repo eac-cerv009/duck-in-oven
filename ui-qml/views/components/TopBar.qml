@@ -1,9 +1,11 @@
 import QtQuick 2.0
+import Themes 1.0
 
 Rectangle {
     id: topBar
 
-    color: "#424241"
+    property string text: statusText.text
+    color: ColorTheme.topBarBackgroundColor
 
     Text {
         id: statusText
@@ -16,9 +18,16 @@ Rectangle {
             //verticalCenter: parent.verticalCenter
         }
 
+        font {
+            family: TextStyle.familyFont
+            pointSize: TextStyle.statusText_fontSize
+            weight: TextStyle.statusText_fontWeight
+        }
+        color: TextStyle.statusText_color
+
         verticalAlignment: Text.AlignVCenter
-        text: qsTr("Status text")
-        color: "white"
+        text: qsTr("")
+
     }
 
     Text {
@@ -32,8 +41,14 @@ Rectangle {
             //verticalCenter: parent.verticalCenter
         }
 
+        font {
+            family: TextStyle.familyFont
+            pointSize: TextStyle.timeText_fontSize
+            weight: Font.Light
+        }
+        color: TextStyle.timeText_color
+
         verticalAlignment: Text.AlignVCenter
-        text: qsTr("11:15 AM") // TODO time taken from a C++ Class
-        color: "white"
+        text: masterController.ui_ovenControlState.ui_time
     }
 }
