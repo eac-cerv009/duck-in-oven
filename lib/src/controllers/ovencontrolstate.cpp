@@ -13,6 +13,16 @@ namespace controllers {
     return this->ovenTurnedOn;
   }
 
+  QString OvenControlState::getTime() const
+  {
+    return time;
+  }
+
+  QString OvenControlState::getDate() const
+  {
+    return date;
+  }
+
   void OvenControlState::setInitialState()
   {
 

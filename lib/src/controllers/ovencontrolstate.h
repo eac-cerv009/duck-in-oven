@@ -13,14 +13,18 @@ namespace controllers {
   {
     Q_OBJECT
 
-    Q_PROPERTY(QString ui_time MEMBER time NOTIFY timeChanged)
-    Q_PROPERTY(QString ui_date MEMBER date NOTIFY dateChanged)
+    Q_PROPERTY(QString ui_time MEMBER time READ getTime NOTIFY timeChanged)
+    Q_PROPERTY(QString ui_date MEMBER date READ getDate NOTIFY dateChanged)
     Q_PROPERTY(bool ui_ovenTurnedOn MEMBER ovenTurnedOn READ isOvenTurnedOn NOTIFY ovenStateChanged)
 
   public:
     explicit OvenControlState(QObject *parent = nullptr);
 
     bool isOvenTurnedOn() const;
+
+    QString getTime() const;
+    QString getDate() const;
+
 
   signals:
     void powerButtonStateChanged(bool);
