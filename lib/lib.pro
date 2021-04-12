@@ -13,15 +13,19 @@ CONFIG += c++14
 INCLUDEPATH += src/
 
 SOURCES += \
+    src/controllers/connectivity/bluetooth.cpp \
+    src/controllers/connectivity/wifi.cpp \
     src/controllers/mastercontroller.cpp \
     src/controllers/ovencontrolstate.cpp \
     src/models/handler.cpp
 
 HEADERS += \
+    src/controllers/connectivity/bluetooth.h \
+    src/controllers/connectivity/wifi.h \
     src/controllers/ovencontrolstate.h \
     src/controllers/uicontrolflow.h \
-    src/lib_global.h \
     src/controllers/mastercontroller.h \
+    src/lib_global.h \
     src/models/handler.h
 
 # Default rules for deployment.
