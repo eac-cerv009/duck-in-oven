@@ -11,6 +11,7 @@ Rectangle {
 
     Item {
         id: switchArea
+
         width: (parent.width / 3) * 2
         anchors {
             top: parent.top
@@ -31,7 +32,7 @@ Rectangle {
             icon.width: 75
             icon.height: 75
 
-            onClicked: masterController.ui_ovenControlState.powerButtonStateChanged
+            onClicked: masterController.ui_ovenControlState.powerButtonStateChanged(powerButton.checked)
         }
     }
 
@@ -57,6 +58,9 @@ Rectangle {
             width: parent.width
             height: parent.height / 3
 
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
+
+
             icon.name: "oven"
             icon.width: 60
             icon.height: 60
@@ -70,6 +74,8 @@ Rectangle {
             width: parent.width
             height: parent.height / 3
 
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
+
             icon.name: "cookbook"
             icon.width: 60
             icon.height: 60
@@ -82,6 +88,8 @@ Rectangle {
 
             width: parent.width
             height: parent.height / 3
+
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
 
             icon.name: "more"
             icon.width: 60

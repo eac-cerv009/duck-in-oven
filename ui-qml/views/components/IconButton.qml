@@ -19,7 +19,6 @@ Button {
 
     hoverEnabled: false
     checkable: true
-    enabled: false
 
 //    leftPadding: 4
 //    rightPadding: 4
@@ -39,7 +38,7 @@ Button {
 
     display: Button.IconOnly
     icon.name: "placeholder"
-    icon.color: iconButton.enabled ? ColorTheme.disabledStateColor
+    icon.color: !iconButton.enabled ? ColorTheme.disabledStateColor
                               :(iconButton.pressed ? ColorTheme.pressedStateColor
                                                    :(iconButton.checked ? ColorTheme.activedStateColor
                                                                         : ColorTheme.defaultStateColor)

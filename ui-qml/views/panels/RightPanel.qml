@@ -31,6 +31,8 @@ Rectangle {
             width: parent.width
             height: parent.height / 3
 
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
+
             icon.name: "light"
             icon.width: 60
             icon.height: 60
@@ -44,6 +46,8 @@ Rectangle {
             width: parent.width
             height: parent.height / 3
 
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
+
             icon.name: "timer"
             icon.width: 60
             icon.height: 60
@@ -56,6 +60,8 @@ Rectangle {
 
             width: parent.width
             height: parent.height / 3
+
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
 
             icon.name: "settings"
             icon.width: 60
@@ -84,7 +90,7 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            enabled: true
+            enabled: false
         }
 
         IconButton {
@@ -97,7 +103,7 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            enabled: true
+            enabled: false
         }
     }
 
