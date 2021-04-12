@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>themes/qmldir</file>
-        <file>themes/TextStyle.qml</file>
-        <file>themes/ColorTheme.js</file>
-    </qresource>
-</RCC>
