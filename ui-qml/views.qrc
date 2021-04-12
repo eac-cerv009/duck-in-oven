@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>views/MainScreen.qml</file>
+        <file>views/DefaultView.qml</file>
+        <file>views/CookBookView.qml</file>
+        <file>views/ManualBakeView.qml</file>
+        <file>views/ManualTemperatureTimerTabView.qml</file>
+        <file>views/ManualTemperatureView.qml</file>
+        <file>views/ManualTimerView.qml</file>
+        <file>views/RunningView.qml</file>
+        <file>views/CameraPreviewView.qml</file>
+        <file>views/panels/LeftPanel.qml</file>
+        <file>views/panels/CenterPanel.qml</file>
+        <file>views/panels/RightPanel.qml</file>
+        <file>views/components/TopBar.qml</file>
+        <file>views/components/BottomBar.qml</file>
+        <file>views/components/IconButton.qml</file>
+        <file>views/components/TextButton.qml</file>
+        <file>views/components/NumberPad.qml</file>
+        <file>views/components/NumericalDigitButton.qml</file>
+    </qresource>
+</RCC>

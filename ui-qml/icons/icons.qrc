@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>duckInOvenTheme/index.theme</file>
+        <file>duckInOvenTheme/130x132/power.png</file>
+        <file>duckInOvenTheme/60x60/oven.png</file>
+        <file>duckInOvenTheme/60x60/cookbook.png</file>
+        <file>duckInOvenTheme/60x60/more.png</file>
+        <file>duckInOvenTheme/60x60/light.png</file>
+        <file>duckInOvenTheme/60x60/timer.png</file>
+        <file>duckInOvenTheme/60x60/settings.png</file>
+
+        <file>duckInOvenTheme/60x60/bluetooth.png</file>
+        <file>duckInOvenTheme/60x60/wifi.png</file>
+    </qresource>
+</RCC>

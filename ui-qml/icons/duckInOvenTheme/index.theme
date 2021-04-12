@@ -1,0 +1,13 @@
+[Icon Theme]
+Name=duckinoven
+Comment=Icon Theme DuckInOven\ui-qml\icons\duckInOvenTheme\index.theme
+
+Directories= 60x60, 130x132
+
+[60x60]
+Size=60
+Type=Fixed
+
+[130x132]
+Size=132
+Type=Fixed
