@@ -15,5 +15,8 @@
         <file>views/components/TopBar.qml</file>
         <file>views/components/BottomBar.qml</file>
         <file>views/components/IconButton.qml</file>
+        <file>views/components/TextButton.qml</file>
+        <file>views/components/NumberPad.qml</file>
+        <file>views/components/NumericalDigitButton.qml</file>
     </qresource>
 </RCC>

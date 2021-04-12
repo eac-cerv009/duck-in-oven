@@ -1,21 +1,31 @@
-QT += quick
+QT += qml quick \
+        #quickcontrols2
 
-CONFIG += c++11
+TEMPLATE = app
+
+CONFIG += c++14
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += src
+INCLUDEPATH += src \
+  ../lib/src
 
 SOURCES += \
         src/main.cpp
 
-RESOURCES += qml.qrc \
-  assets.qrc
+RESOURCES += \
+  views.qrc \
+  views/assets/assets.qrc \
+  icons/icons.qrc \
+  Themes/themes.qrc
+
+LIBS += -LC:\_dev\winDev\git\build-DuckInOven-Desktop_Qt_6_0_2_MinGW_64_bit-Debug\lib\debug -ldio-lib
+
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =  $$PWD
+QML_IMPORT_PATH += $$PWD
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
@@ -34,9 +44,13 @@ DISTFILES += \
   views/ManualTemperatureView.qml \
   views/ManualTimerView.qml \
   views/RunningView.qml \
+  views/components/NumericalDigitButton.qml \
   views/panels/CenterPanel.qml \
   views/panels/LeftPanel.qml \
   views/panels/RightPanel.qml \
   views/components/TopBar.qml \
   views/components/BottomBar.qml \
-  views/components/IconButton.qml
+  views/components/IconButton.qml \
+  views/components/TextButton.qml \
+  views/components/NumberPad.qml
+
