@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/Themes">
+        <file>ColorTheme.qml</file>
+        <file>TextStyle.qml</file>
+        <file>qmldir</file>
+
+    </qresource>
+
+</RCC>
