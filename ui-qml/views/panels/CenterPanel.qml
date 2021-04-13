@@ -23,6 +23,8 @@ Rectangle {
 
     Connections {
         target: masterController.ui_controlFlow
+        onGoOvenManualSet:
+            contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml");
         onGoCookbookView:
             contentFrame.replace("qrc:/views/CookBookView.qml");
         onGoManualBakeView:

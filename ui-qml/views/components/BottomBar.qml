@@ -6,20 +6,31 @@ Rectangle {
 
     color: ColorTheme.bottomBarBackgroundColor
 
+    Connections {
+        target: masterController.ui_controlFlow
+        onGoOvenManualSet:
+            actionButton.visible= true
+        onGoCookbookView:
+            actionButton.visible= false
+        onGoManualBakeView:
+            actionButton.visible= false
+
+    }
+
     IconButton {
         id: cameraButton
 
         width: 62; height: 62
 
         anchors {
-            right: nextButton.left
-            verticalCenter: nextButton.verticalCenter
+            right: actionButton.left
+            verticalCenter: actionButton.verticalCenter
             rightMargin: 40
         }
     }
 
     TextButton {
-        id: nextButton
+        id: actionButton
 
         width: 155
         height: 62
@@ -29,6 +40,8 @@ Rectangle {
             verticalCenter: parent.verticalCenter
             rightMargin: 40
         }
+
+        visible: false
 
         radius: width / 4
 

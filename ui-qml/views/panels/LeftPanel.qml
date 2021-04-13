@@ -65,7 +65,7 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            onClicked: masterController.ui_controlFlow.goRunningView()
+            onClicked: masterController.ui_controlFlow.goOvenManualSet()
         }
 
         IconButton {

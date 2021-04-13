@@ -6,7 +6,7 @@ Item {
     property int buttonHeight: 60
     property bool showBorder: true
     property bool centerTextAligment: false
-    property int numberSpacing: 30
+    property int numberSpacing: 15
     property int rowsNumber: 2
     property int columnsNumber: 5
 
@@ -16,7 +16,6 @@ Item {
         rows: rowsNumber
         columns: columnsNumber
         spacing: numberSpacing
-
 
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
