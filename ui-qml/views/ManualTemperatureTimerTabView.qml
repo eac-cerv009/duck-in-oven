@@ -1,6 +1,9 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import Themes 1.0
+
+import "components"
 
 Item {
     id: manualTemperatureTimerView
@@ -23,10 +26,17 @@ Item {
             width: parent.width;
 
             currentIndex: stackview_.currentIndex
-            TabButton {
+
+
+            TabTitle {
+                id: temperatureTabTitle
+
                 text: qsTr("Temperature")
             }
-            TabButton {
+
+            TabTitle {
+                id: timerTabTitle
+
                 text: qsTr("Timer")
             }
         }

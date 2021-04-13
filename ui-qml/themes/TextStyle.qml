@@ -30,11 +30,11 @@ QtObject {
 
     readonly property int activeTab_fontSize: 38
     readonly property int activeTab_fontWeight: Font.Bold
-    readonly property color activeTab_color: "#F2F2F2"
+    readonly property color activeTab_color: "#71E51A"
 
     readonly property int inactiveTab_fontSize: 37
     readonly property int inactiveTab_fontWeight: Font.Normal
-    readonly property color inactiveTab_color: "#F2F2F2"
+    readonly property color inactiveTab_color: "#9C9C9C"
 
     readonly property int temperature_fontSize: 74
     readonly property int temperature_fontWeight: Font.Normal

@@ -18,5 +18,6 @@
         <file>views/components/TextButton.qml</file>
         <file>views/components/NumberPad.qml</file>
         <file>views/components/NumericalDigitButton.qml</file>
+        <file>views/components/TabTitle.qml</file>
     </qresource>
 </RCC>
