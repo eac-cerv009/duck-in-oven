@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 Item {
+    id: numberPad
 
     property int buttonWidth: 60
     property int buttonHeight: 60
@@ -10,8 +11,10 @@ Item {
     property int rowsNumber: 2
     property int columnsNumber: 5
 
+    signal digitButtonPressed(var number)
+
     Grid {
-        id: numberPad
+        id: numberPadGrid
 
         rows: rowsNumber
         columns: columnsNumber
@@ -34,10 +37,11 @@ Item {
 
             width: buttonWidth
             height: buttonHeight
-            radius: buttonWidth / 2
             centerTextAligment: true
 
             text: model.digit
+
+            onClicked: numberPad.digitButtonPressed(text)
         }
     }
 

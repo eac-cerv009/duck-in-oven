@@ -2,26 +2,32 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import Themes 1.0
 
-Rectangle {
-    id: button
-
-    property alias text: digit.text
-    property alias textColor: digit.color
-    property alias borderColor: button.border.color
+Button {
+    id: numericalDigitButton
 
     property bool showBorder: true
     property bool centerTextAligment: false
 
     implicitWidth: 60
     implicitHeight: 60
-    radius: width / 2
-    color: ColorTheme.numDigitButtonBackgroundColor
-    border {
-        width: showBorder ? 1 : 0
-        color: ColorTheme.numDigitButtonBorderColor
+
+    hoverEnabled: false
+
+    background: Rectangle {
+        id: bg
+        anchors.fill: parent
+        radius: width / 2
+        color: numericalDigitButton.pressed ? ColorTheme.pressedStateColor
+                                            : ColorTheme.numDigitButtonBackgroundColor
+
+        border {
+            width: showBorder ? 1 : 0
+            color: numericalDigitButton.pressed ? ColorTheme.pressedStateColor
+                                                : ColorTheme.numDigitButtonBorderColor
+        }
     }
 
-    Text {
+    contentItem: Text {
         id: digit
         anchors.fill: parent
 
@@ -35,15 +41,6 @@ Rectangle {
         }
         color: TextStyle.numDigitButtonText_color
 
-        text: "#"
-    }
-
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        onClicked: {
-            digit.color = ColorTheme.pressedStateColor
-            button.border.color = ColorTheme.pressedStateColor
-        }
+        text: numericalDigitButton.text
     }
 }

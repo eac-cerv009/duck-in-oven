@@ -13,19 +13,13 @@ Item {
 
         anchors.fill: parent
 
-//        width: parent.width; height: 180
-
-//        anchors.top: parent.top
-//        anchors.left: parent.left
-//        anchors.right: parent.right
-
-        color: "#2F2F2F"
+        color: ColorTheme.centerPanelBackgroundColor
 
         TabBar {
             id: bar
             width: parent.width;
 
-            currentIndex: stackview_.currentIndex
+            currentIndex: stackview.currentIndex
 
 
             TabTitle {
@@ -41,9 +35,8 @@ Item {
             }
         }
 
-        //SwipeView {
         StackLayout {
-            id: stackview_
+            id: stackview
 
             anchors {
                 left: parent.left
@@ -58,7 +51,7 @@ Item {
                 id: temperatureTab
             }
 
-            ManualTimerView {
+            TimerSelector {
                 id: timerTab
             }
         }
