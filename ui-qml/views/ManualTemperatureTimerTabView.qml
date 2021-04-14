@@ -44,14 +44,17 @@ Item {
         //SwipeView {
         StackLayout {
             id: stackview_
-            width: parent.width; height: 100
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: bar.bottom
-            anchors.bottom: parent.bottom
+
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: bar.bottom
+                bottom: parent.bottom
+            }
+
             currentIndex: bar.currentIndex
 
-            ManualTemperatureView {
+            TemperatureSelector {
                 id: temperatureTab
             }
 

@@ -5,5 +5,6 @@
         <file>picture.png</file>
         <file>unicorn.png</file>
         <file>yay.png</file>
+        <file>tempSelector.png</file>
     </qresource>
 </RCC>

@@ -21,6 +21,8 @@ Item {
     readonly property color numDigitButtonBackgroundColor: "#424241"
     readonly property color numDigitButtonBorderColor: "#C4C4C4"
 
+    readonly property color temperatureSelectorBackgroundColor: "#424241"
+
     readonly property color timerInfoColor: "#9C9C9C"
 
 
