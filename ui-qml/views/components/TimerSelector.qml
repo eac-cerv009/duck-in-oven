@@ -7,7 +7,7 @@ import Themes 1.0
 Item {
     id: timerSelector
 
-    property string selectedTime: "hh:mm"
+    property string selectedTime: digitFour+digitThree+ ":" + digitTwo+digitOne
     property int counter: 0
     property string digitOne: "M"
     property string digitTwo: "M"
@@ -32,7 +32,7 @@ Item {
             }
             color: TextStyle.timer_color
 
-            text: qsTr(digitFour+digitThree+ ":" + digitTwo+digitOne)
+            text: qsTr(selectedTime)
         }
     }
 

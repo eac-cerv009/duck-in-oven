@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.15
+import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.15
 import Themes 1.0
 
@@ -7,6 +7,25 @@ import "components"
 
 Item {
     id: manualTemperatureTimerView
+
+    objectName: "manualTemperatureTimerView"
+
+    Connections {
+        target: masterController.ui_controlFlow
+
+        function onActionButtonBottomBarClicked() {
+            if (stackview.currentIndex == 0) {
+                bar.currentIndex = 1
+                console.log(temperatureTab.selectedTemperature)
+                masterController.ui_ovenControlState.ovenTemperatureChoosen(temperatureTab.selectedTemperature);
+            }
+            else if (stackview.currentIndex == 1) {
+                console.log(timerTab.selectedTime)
+                masterController.ui_ovenControlState.ovenTimerChoosen(timerTab.selectedTime);
+                masterController.ui_controlFlow.goRunningView();
+            }
+        }
+    }
 
     Rectangle {
         id: content
@@ -20,7 +39,6 @@ Item {
             width: parent.width;
 
             currentIndex: stackview.currentIndex
-
 
             TabTitle {
                 id: temperatureTabTitle

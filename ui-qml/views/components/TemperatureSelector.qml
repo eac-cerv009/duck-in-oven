@@ -7,6 +7,7 @@ Item {
 
     id: temperatureSelector
 
+    property string selectedTemperature: selectedTemperatureText.text
     property int largeTicksNum : 7
     property int largeTickWidth: 5
     property int smallTicksNum : 31

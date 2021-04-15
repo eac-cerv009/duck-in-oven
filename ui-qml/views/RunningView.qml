@@ -1,15 +1,52 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.15
+import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.15
 import Themes 1.0
 
 Item {
-    id: manualTemperatureView
+    id: runningView
+
+    objectName: "runningView"
 
     property int textMarginsValue: 20
     property int leftMarginValue: 60
     property int rightMarginValue: 60
     property int topMarginValue: 60
+    property int progressBarResolution: 1000
+    property int progressBarRefreshPeriod: masterController.ui_ovenControlState.ui_selectedTime / progressBarResolution
+    property int remainingTime: progressBarResolution
+
+    Connections {
+        target: masterController.ui_controlFlow
+
+        function onActionButtonBottomBarClicked() {
+            masterController.ui_ovenControlState.runningButtonPressed()
+        }
+    }
+
+    Connections {
+        target: masterController.ui_ovenControlState
+
+        function onOvenRunningStateChanged() {
+            refreshProgressBarTimer.running = masterController.ui_ovenControlState.ui_ovenRunning ? true : false
+        }
+    }
+
+    Timer {
+        id: refreshProgressBarTimer
+        interval: progressBarRefreshPeriod
+        running: false
+        repeat: true
+        onTriggered: --remainingTime
+    }
+
+    Timer {
+        interval: 6000
+        running: masterController.ui_ovenControlState.ui_ovenRunning
+        repeat: true
+        onTriggered: --remainingTime
+    }
+
 
     Item {
         id: labelsRow
@@ -27,7 +64,7 @@ Item {
         }
 
         Text {
-            id: temperatureText
+            id: temperatureLabel
 
             anchors {
                 bottom: parent.bottom
@@ -42,11 +79,11 @@ Item {
             }
             color: TextStyle.setTemperature_color
 
-            text: "425°F"
+            text: masterController.ui_ovenControlState.ui_temperature + " °F"
         }
 
         Text {
-            id: timeText
+            id: timeLeftLabel
             anchors {
                 bottom: parent.bottom
                 right: parent.right
@@ -60,7 +97,7 @@ Item {
             }
             color: TextStyle.timerRunning_color
 
-            text: "01:30"   // TO DO C++ Conexion
+            text: masterController.ui_ovenControlState.ui_timerTimeLeft
         }
     }
 
@@ -76,7 +113,10 @@ Item {
 
         ProgressBar {
             id: control
-            value: 0.5
+
+            from: 0
+            value: remainingTime
+            to: progressBarResolution
             padding: 1
 
             anchors.left: parent.left
@@ -102,35 +142,5 @@ Item {
                 }
             }
         }
-
-
-
     }
-
-    /*// ### SoB Dummy Area
-//    Rectangle {
-//        id: dummyRectangle
-//        //            anchors.fill: parent
-//        anchors {
-//            top: labelsRow.bottom
-//            bottom: parent.bottom
-//            margins: 10
-//        }
-//        width: parent.width
-//        height: parent.height
-//        color: "yellow"
-//        Text {
-//            anchors.fill: parent
-
-//            horizontalAlignment: Text.AlignHCenter
-//            verticalAlignment: Text.AlignVCenter
-
-//            text: "Dummy Area"
-//        }
-//    }
-    // ### EoB Dummy Area*/
-
-
-
-
 }

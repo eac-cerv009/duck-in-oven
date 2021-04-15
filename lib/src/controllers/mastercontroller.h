@@ -23,6 +23,7 @@ class MasterController : public QObject
 public:
   explicit MasterController(QObject* parent = nullptr);
   ~MasterController();
+
   UiControlFlow* uiControlFlow();
   OvenControlState* ovenControlState();
 
