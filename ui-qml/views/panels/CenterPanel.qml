@@ -15,42 +15,48 @@ Rectangle {
         target: masterController.ui_controlFlow
         function onGoOvenManualSet() {
             if (contentFrame.currentItem.objectName != "manualTemperatureTimerView") {
+                topBar.statusText.text = qsTr("Manual Set")
                 contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml");
+                bottomBar.actionButton.text = qsTr("Next")
                 bottomBar.actionButton.visible = true
             }
         }
         function onGoCookbookView() {
             if (contentFrame.currentItem.objectName != "cookBookView") {
+                topBar.statusText.text = qsTr("Cookbook")
                 contentFrame.replace("qrc:/views/CookBookView.qml");
-                bottomBar.actionButton.visible = true
+                bottomBar.actionButton.visible = false
             }
         }
         function onGoManualBakeView() {
-            if (contentFrame.currentItem.objectName != "manualBakeView")
+            if (contentFrame.currentItem.objectName != "manualBakeView") {
+                topBar.statusText.text = qsTr("")
                 contentFrame.replace("qrc:/views/ManualBakeView.qml");
-        }
-        function onGoManualTemperatureView() {
-            if (contentFrame.currentItem.objectName != "View")
-                contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml")
-        }
-        function onGoManualTimerView() {
-            if (contentFrame.currentItem.objectName != "View")
-                contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml")
+                bottomBar.actionButton.visible = false
+            }
         }
         function onGoRunningView() {
             if (contentFrame.currentItem.objectName != "runningView") {
+                topBar.statusText.text = qsTr("Timer status")
                 contentFrame.replace("qrc:/views/RunningView.qml")
                 bottomBar.actionButton.text = masterController.ui_ovenControlState.ui_ovenRunning ? qsTr("Cancel") : qsTr("Start")
                 bottomBar.actionButton.visible = true
             }
         }
         function onGoCameraPreview() {
-            if (contentFrame.currentItem.objectName != "cameraPreviewView")
+            if (contentFrame.currentItem.objectName != "cameraPreviewView") {
+                topBar.statusText.text = qsTr("Camera Preview")
                 contentFrame.replace("qrc:/views/CameraPreviewView.qml")
+                bottomBar.actionButton.text = qsTr("Cancel")
+                bottomBar.actionButton.visible = true
+            }
         }
         function onGoSettingsView() {
-            if (contentFrame.currentItem.objectName != "settingsView")
+            if (contentFrame.currentItem.objectName != "settingsView") {
+                topBar.statusText.text = qsTr("Settings")
                 contentFrame.replace("qrc:/views/SettingsView.qml")
+                bottomBar.actionButton.visible = false
+            }
         }
     }
 
@@ -59,6 +65,12 @@ Rectangle {
 
         function onOvenRunningStateChanged() {
             bottomBar.actionButton.text = masterController.ui_ovenControlState.ui_ovenRunning ? qsTr("Cancel") : qsTr("Start")
+        }
+
+        function onOvenPowerStateChanged() {
+            if (contentFrame.currentItem.objectName != "defaultView") {
+                contentFrame.replace("qrc:/views/DefaultView.qml")
+            }
         }
     }
 
