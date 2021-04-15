@@ -7,12 +7,13 @@ import QtQuick.Controls 2.0
 Rectangle {
     id: rightPanel
 
-    implicitWidth: 442; implicitHeight: 548
-    color: ColorTheme.sidePanelBackgroundColor
+    property alias lightButton: lightButton
+    property alias timeRunningButton: timeRunningButton
+    property alias settingsButton: settingsButton
 
-    ButtonGroup {
-        id: group
-    }
+    implicitWidth: 442; implicitHeight: 548
+
+    color: ColorTheme.sidePanelBackgroundColor
 
     Column {
         id: buttonsColumn
@@ -41,7 +42,7 @@ Rectangle {
         }
 
         IconButton {
-            id: timeButton
+            id: timeRunningButton
 
             width: parent.width
             height: parent.height / 3
@@ -53,8 +54,6 @@ Rectangle {
             icon.height: 60
 
             onClicked: masterController.ui_controlFlow.goRunningView()
-
-            ButtonGroup.group: group
         }
 
         IconButton {
@@ -70,8 +69,6 @@ Rectangle {
             icon.height: 60
 
             onClicked:  masterController.ui_controlFlow.goSettingsView()
-
-            ButtonGroup.group: group
         }
     }
 
@@ -112,5 +109,4 @@ Rectangle {
             enabled: false
         }
     }
-
 }

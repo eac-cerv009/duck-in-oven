@@ -7,6 +7,7 @@ Item {
     readonly property color pressedStateColor: "#F6771E"
     readonly property color disabledStateColor: "#5F5F5F"
 
+    readonly property color mainAreaBackgroundColor: "#424241"
     readonly property color centerPanelBackgroundColor: "#2F2F2F"
     readonly property color sidePanelBackgroundColor: "#51504F"//"#9C9C9C"
     readonly property color topBarBackgroundColor: "#424241"
