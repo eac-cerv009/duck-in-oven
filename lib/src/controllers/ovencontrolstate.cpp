@@ -17,6 +17,11 @@ namespace controllers {
     return this->ovenRunning;
   }
 
+  bool OvenControlState::isLightTurnedOn() const
+  {
+    return this->lightTurnedOn;
+  }
+
   QString OvenControlState::getTime() const
   {
     return time;
@@ -82,6 +87,7 @@ namespace controllers {
   void OvenControlState::updateLightState(bool newLightState)
   {
     lightTurnedOn = newLightState;
+    emit ovenLightStateChanged();
   }
 
   void OvenControlState::updateTemperature(QString newTemperature)

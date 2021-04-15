@@ -17,6 +17,7 @@ namespace controllers {
     Q_PROPERTY(QString ui_time MEMBER time READ getTime NOTIFY timeChanged)
     Q_PROPERTY(QString ui_date MEMBER date READ getDate NOTIFY dateChanged)
     Q_PROPERTY(bool ui_ovenTurnedOn MEMBER ovenTurnedOn READ isOvenTurnedOn NOTIFY ovenPowerStateChanged)
+    Q_PROPERTY(bool ui_lightTurnedOn MEMBER lightTurnedOn READ isLightTurnedOn NOTIFY ovenLightStateChanged)
     Q_PROPERTY(bool ui_ovenRunning MEMBER ovenRunning READ isOvenRunning NOTIFY ovenRunningStateChanged)
     Q_PROPERTY(QString ui_temperature MEMBER temperature NOTIFY ovenTemperatureChanged)
     Q_PROPERTY(QString ui_timerTimeLeft MEMBER timerTimeLeft NOTIFY timerTimeLeftChanged)
@@ -27,6 +28,7 @@ namespace controllers {
 
     bool isOvenTurnedOn() const;
     bool isOvenRunning() const;
+    bool isLightTurnedOn() const;
 
     QString getTime() const;
     QString getDate() const;
@@ -40,6 +42,7 @@ namespace controllers {
     void ovenTimerChoosen(QString);
 
     void ovenPowerStateChanged();
+    void ovenLightStateChanged();
     void ovenRunningStateChanged();
     void ovenTemperatureChanged();
     void timerTimeLeftChanged();
