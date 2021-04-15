@@ -88,12 +88,11 @@ Rectangle {
             width: parent.width
             height: parent.height / 3
 
-
             icon.name: "bluetooth"
             icon.width: 60
             icon.height: 60
 
-            enabled: false
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn  && masterController.ui_bluetooth.ui_bluetoothAvailable
         }
 
         IconButton {
@@ -106,7 +105,7 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            enabled: false
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn  && masterController.ui_wiFi.ui_wiFiAvailable
         }
     }
 }

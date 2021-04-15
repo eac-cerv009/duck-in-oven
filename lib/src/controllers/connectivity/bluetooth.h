@@ -3,6 +3,7 @@
 
 #include <QObject>
 
+#include <lib_global.h>
 
 namespace controllers {
   namespace connectivity {
@@ -10,6 +11,9 @@ namespace controllers {
     class Bluetooth : public QObject
     {
       Q_OBJECT
+
+      Q_PROPERTY(bool ui_bluetoothAvailable MEMBER bluetoothAvailable READ isBluetoothAvailable CONSTANT)
+
     public:
       explicit Bluetooth(QObject *parent = nullptr);
 

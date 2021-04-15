@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-//#include <QQuickStyle>
 #include <QIcon>
 
 #include <controllers/mastercontroller.h>
@@ -19,12 +18,10 @@ int main(int argc, char *argv[])
   qmlRegisterType<controllers::MasterController>("DIO", 1, 0, "MasterController");
   qmlRegisterType<controllers::UiControlFlow>("DIO", 1, 0, "UiControlFlow");
   qmlRegisterType<controllers::OvenControlState>("DIO", 1, 0, "OvenControlState");
+  qmlRegisterType<controllers::connectivity::WiFi>("DIO", 1, 0, "WiFi");
+  qmlRegisterType<controllers::connectivity::Bluetooth>("DIO", 1, 0, "Bluetooth");
 
   controllers::MasterController masterController;
-
-  //! [style]
-  //QQuickStyle::setStyle(QStringLiteral("://themes"));
-  //! [style]
 
   //! [icons]
   QIcon::setThemeName(QStringLiteral("duckInOvenTheme"));
@@ -34,7 +31,6 @@ int main(int argc, char *argv[])
 
   engine.addImportPath("qrc:/");
   engine.rootContext()->setContextProperty("masterController", &masterController);
-
 
   const QUrl url(QStringLiteral("qrc:/views/MainScreen.qml"));
   QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
