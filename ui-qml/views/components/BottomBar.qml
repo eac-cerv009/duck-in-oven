@@ -4,18 +4,10 @@ import Themes 1.0
 Rectangle {
     id: bottomBar
 
+    property alias cameraButton: cameraButton
+    property alias actionButton: actionButton
+
     color: ColorTheme.bottomBarBackgroundColor
-
-    Connections {
-        target: masterController.ui_controlFlow
-        onGoOvenManualSet:
-            actionButton.visible= true
-        onGoCookbookView:
-            actionButton.visible= false
-        onGoManualBakeView:
-            actionButton.visible= false
-
-    }
 
     IconButton {
         id: cameraButton
@@ -40,7 +32,7 @@ Rectangle {
             verticalCenter: parent.verticalCenter
             rightMargin: 40
         }
-
+ 
         visible: false
 
         radius: width / 4
@@ -49,5 +41,7 @@ Rectangle {
         centerTextAligment: true
         textFontSize: TextStyle.bottonBarText_fontSize
         text: qsTr("NEXT")
+
+        onClicked: masterController.ui_controlFlow.actionButtonBottomBarClicked()
     }
 }

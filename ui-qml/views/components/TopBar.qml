@@ -4,7 +4,9 @@ import Themes 1.0
 Rectangle {
     id: topBar
 
+    property alias statusText: statusText
     property string text: statusText.text
+
     color: ColorTheme.topBarBackgroundColor
 
     Text {
