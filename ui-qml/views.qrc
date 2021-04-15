@@ -7,6 +7,7 @@
         <file>views/ManualTemperatureTimerTabView.qml</file>
         <file>views/RunningView.qml</file>
         <file>views/CameraPreviewView.qml</file>
+        <file>views/SettingsView.qml</file>
         <file>views/panels/LeftPanel.qml</file>
         <file>views/panels/CenterPanel.qml</file>
         <file>views/panels/RightPanel.qml</file>

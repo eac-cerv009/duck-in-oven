@@ -43,6 +43,7 @@ DISTFILES += \
   views/ManualTemperatureTimerTabView.qml \
   views/ManualTemperatureView.qml \
   views/RunningView.qml \
+  views/SettingsView.qml \
   views/TimerSelector.qml \
   views/components/NumericalDigitButton.qml \
   views/panels/CenterPanel.qml \
