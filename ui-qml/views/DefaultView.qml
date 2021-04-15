@@ -3,6 +3,7 @@ import Themes 1.0
 
 Rectangle {
     id: defaultView
+    objectName: "defaultView"
 
     color: ColorTheme.centerPanelBackgroundColor
 

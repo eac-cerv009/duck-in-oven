@@ -2,6 +2,8 @@ import QtQuick 2.0
 
 Item {
 
+    objectName: "cameraPreviewView"
+
     property int photoMargins: 15
     Image {
         id: photo
