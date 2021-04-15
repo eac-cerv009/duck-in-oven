@@ -19,6 +19,18 @@ Rectangle {
             verticalCenter: actionButton.verticalCenter
             rightMargin: 40
         }
+
+        visible: false
+
+        showBorder: true
+        showBackground: true
+
+        icon.name: "camera"
+        icon.width: 40
+        icon.height: 40
+
+        onClicked: cameraButton.checked ? masterController.ui_controlFlow.goCameraPreview() :
+                                          masterController.ui_controlFlow.goRunningView()
     }
 
     TextButton {

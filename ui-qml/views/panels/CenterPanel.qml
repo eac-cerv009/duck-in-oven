@@ -17,6 +17,7 @@ Rectangle {
             if (contentFrame.currentItem.objectName != "manualTemperatureTimerView") {
                 topBar.statusText.text = qsTr("Manual Set")
                 contentFrame.replace("qrc:/views/ManualTemperatureTimerTabView.qml");
+                bottomBar.cameraButton.visible = false
                 bottomBar.actionButton.text = qsTr("Next")
                 bottomBar.actionButton.visible = true
             }
@@ -24,6 +25,7 @@ Rectangle {
         function onGoCookbookView() {
             if (contentFrame.currentItem.objectName != "cookBookView") {
                 topBar.statusText.text = qsTr("Cookbook")
+                bottomBar.cameraButton.visible = false
                 contentFrame.replace("qrc:/views/CookBookView.qml");
                 bottomBar.actionButton.visible = false
             }
@@ -31,6 +33,7 @@ Rectangle {
         function onGoManualBakeView() {
             if (contentFrame.currentItem.objectName != "manualBakeView") {
                 topBar.statusText.text = qsTr("")
+                bottomBar.cameraButton.visible = false
                 contentFrame.replace("qrc:/views/ManualBakeView.qml");
                 bottomBar.actionButton.visible = false
             }
@@ -39,6 +42,7 @@ Rectangle {
             if (contentFrame.currentItem.objectName != "runningView") {
                 topBar.statusText.text = qsTr("Timer status")
                 contentFrame.replace("qrc:/views/RunningView.qml")
+                bottomBar.cameraButton.visible = true
                 bottomBar.actionButton.text = masterController.ui_ovenControlState.ui_ovenRunning ? qsTr("Cancel") : qsTr("Start")
                 bottomBar.actionButton.visible = true
             }
@@ -47,6 +51,7 @@ Rectangle {
             if (contentFrame.currentItem.objectName != "cameraPreviewView") {
                 topBar.statusText.text = qsTr("Camera Preview")
                 contentFrame.replace("qrc:/views/CameraPreviewView.qml")
+                bottomBar.cameraButton.visible = true
                 bottomBar.actionButton.text = qsTr("Cancel")
                 bottomBar.actionButton.visible = true
             }
@@ -54,6 +59,7 @@ Rectangle {
         function onGoSettingsView() {
             if (contentFrame.currentItem.objectName != "settingsView") {
                 topBar.statusText.text = qsTr("Settings")
+                bottomBar.cameraButton.visible = false
                 contentFrame.replace("qrc:/views/SettingsView.qml")
                 bottomBar.actionButton.visible = false
             }
@@ -70,6 +76,7 @@ Rectangle {
         function onOvenPowerStateChanged() {
             if (contentFrame.currentItem.objectName != "defaultView") {
                 contentFrame.replace("qrc:/views/DefaultView.qml")
+                bottomBar.cameraButton.visible = false
             }
         }
     }
