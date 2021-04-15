@@ -11,7 +11,7 @@ Rectangle {
     color: ColorTheme.sidePanelBackgroundColor
 
     ButtonGroup {
-        buttons: buttonsColumn.children
+        id: group
     }
 
     Column {
@@ -37,11 +37,11 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            onClicked: masterController.ui_controlFlow.gogoManualTemperatureView()
+            onClicked: masterController.ui_ovenControlState.lightButtonStateChanged(lightButton.checked)
         }
 
         IconButton {
-            id: timerButton
+            id: timeButton
 
             width: parent.width
             height: parent.height / 3
@@ -52,7 +52,9 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            onClicked: masterController.ui_controlFlow.gogoManualTimerView()
+            onClicked: masterController.ui_controlFlow.goRunningView()
+
+            ButtonGroup.group: group
         }
 
         IconButton {
@@ -66,6 +68,10 @@ Rectangle {
             icon.name: "settings"
             icon.width: 60
             icon.height: 60
+
+            onClicked:  masterController.ui_controlFlow.goSettingsView()
+
+            ButtonGroup.group: group
         }
     }
 
