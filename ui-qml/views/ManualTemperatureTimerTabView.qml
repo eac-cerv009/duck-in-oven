@@ -16,11 +16,9 @@ Item {
         function onActionButtonBottomBarClicked() {
             if (stackview.currentIndex == 0) {
                 bar.currentIndex = 1
-                console.log(temperatureTab.selectedTemperature)
                 masterController.ui_ovenControlState.ovenTemperatureChoosen(temperatureTab.selectedTemperature);
             }
             else if (stackview.currentIndex == 1) {
-                console.log(timerTab.selectedTime)
                 masterController.ui_ovenControlState.ovenTimerChoosen(timerTab.selectedTime);
                 masterController.ui_controlFlow.goRunningView();
             }

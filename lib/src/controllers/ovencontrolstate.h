@@ -35,7 +35,6 @@ namespace controllers {
 
   signals:
     void powerButtonStateChanged(bool);
-
     void lightButtonStateChanged(bool);
     void runningButtonPressed();
     void ovenTemperatureChoosen(QString);
