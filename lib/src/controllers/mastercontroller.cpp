@@ -9,13 +9,17 @@ namespace controllers {
     {
       uiControlFlow = new UiControlFlow(masterController);
       ovenControlState = new OvenControlState(masterController);
+      wiFi = new WiFi(masterController);
+      bluetooth = new Bluetooth(masterController);
     }
 
     MasterController* masterController{nullptr};
     UiControlFlow* uiControlFlow{nullptr};
     OvenControlState* ovenControlState{nullptr};
+    WiFi *wiFi{nullptr};
+    Bluetooth* bluetooth{nullptr};
 
-    QString welcomeMessage = "Hi from MstrCtrller";
+    QString welcomeMessage = "Hallo from MstrCtrller";
 
   };
 
@@ -37,6 +41,16 @@ namespace controllers {
   OvenControlState* MasterController::ovenControlState()
   {
     return implementation->ovenControlState;
+  }
+
+  WiFi *MasterController::wiFi()
+  {
+    return implementation->wiFi;
+  }
+
+  Bluetooth *MasterController::bluetooth()
+  {
+    return implementation->bluetooth;
   }
 
   const QString &MasterController::welcomeMessage() const

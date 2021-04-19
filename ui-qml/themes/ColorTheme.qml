@@ -7,6 +7,7 @@ Item {
     readonly property color pressedStateColor: "#F6771E"
     readonly property color disabledStateColor: "#5F5F5F"
 
+    readonly property color mainAreaBackgroundColor: "#424241"
     readonly property color centerPanelBackgroundColor: "#2F2F2F"
     readonly property color sidePanelBackgroundColor: "#51504F"//"#9C9C9C"
     readonly property color topBarBackgroundColor: "#424241"
@@ -20,6 +21,8 @@ Item {
 
     readonly property color numDigitButtonBackgroundColor: "#424241"
     readonly property color numDigitButtonBorderColor: "#C4C4C4"
+
+    readonly property color temperatureSelectorBackgroundColor: "#424241"
 
     readonly property color timerInfoColor: "#9C9C9C"
 

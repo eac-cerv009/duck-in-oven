@@ -8,8 +8,8 @@
         <file>duckInOvenTheme/60x60/light.png</file>
         <file>duckInOvenTheme/60x60/timer.png</file>
         <file>duckInOvenTheme/60x60/settings.png</file>
-
         <file>duckInOvenTheme/60x60/bluetooth.png</file>
         <file>duckInOvenTheme/60x60/wifi.png</file>
+        <file>duckInOvenTheme/60x60/camera.png</file>
     </qresource>
 </RCC>

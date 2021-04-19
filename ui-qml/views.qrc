@@ -5,10 +5,9 @@
         <file>views/CookBookView.qml</file>
         <file>views/ManualBakeView.qml</file>
         <file>views/ManualTemperatureTimerTabView.qml</file>
-        <file>views/ManualTemperatureView.qml</file>
-        <file>views/ManualTimerView.qml</file>
         <file>views/RunningView.qml</file>
         <file>views/CameraPreviewView.qml</file>
+        <file>views/SettingsView.qml</file>
         <file>views/panels/LeftPanel.qml</file>
         <file>views/panels/CenterPanel.qml</file>
         <file>views/panels/RightPanel.qml</file>
@@ -18,5 +17,8 @@
         <file>views/components/TextButton.qml</file>
         <file>views/components/NumberPad.qml</file>
         <file>views/components/NumericalDigitButton.qml</file>
+        <file>views/components/TabTitle.qml</file>
+        <file>views/components/TemperatureSelector.qml</file>
+        <file>views/components/TimerSelector.qml</file>
     </qresource>
 </RCC>

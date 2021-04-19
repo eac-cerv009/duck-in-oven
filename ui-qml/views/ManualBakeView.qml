@@ -3,6 +3,8 @@ import "components"
 
 Item {
 
+    objectName: "manualBakeView"
+
     property int bakeButtonWidth: 233
     property int bakeButtonHeight: 207
     property int buttonsSpacing: 15
@@ -43,8 +45,8 @@ Item {
         ListElement { bakeOption: "Text" }
         ListElement { bakeOption: "Text B" }
         ListElement { bakeOption: "Text C" }
-        ListElement { bakeOption: "Text D" }
-        ListElement { bakeOption: "Text E" }
+//        ListElement { bakeOption: "Text D" }
+//        ListElement { bakeOption: "Text E" }
     }
 }
 

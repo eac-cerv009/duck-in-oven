@@ -17,7 +17,8 @@ SOURCES += \
     src/controllers/connectivity/wifi.cpp \
     src/controllers/mastercontroller.cpp \
     src/controllers/ovencontrolstate.cpp \
-    src/models/handler.cpp
+    src/models/cookbook.cpp \
+    src/models/recipe.cpp
 
 HEADERS += \
     src/controllers/connectivity/bluetooth.h \
@@ -26,7 +27,8 @@ HEADERS += \
     src/controllers/uicontrolflow.h \
     src/controllers/mastercontroller.h \
     src/lib_global.h \
-    src/models/handler.h
+    src/models/cookbook.h \
+    src/models/recipe.h
 
 # Default rules for deployment.
 unix {

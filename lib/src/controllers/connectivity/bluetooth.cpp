@@ -5,7 +5,13 @@ namespace controllers {
 
     Bluetooth::Bluetooth(QObject *parent) : QObject(parent)
     {
+      bluetoothAvailable = false;
 
+    }
+
+    bool Bluetooth::isBluetoothAvailable()
+    {
+      return this->bluetoothAvailable;
     }
 
   }

@@ -6,7 +6,12 @@ import "../components"
 Rectangle {
     id: leftPanel
 
+    property alias ovenButton: ovenButton
+    property alias cookbookButton: cookbookButton
+    property alias moreButton: moreButton
+
     implicitWidth: 442; implicitHeight: 548
+
     color: ColorTheme.sidePanelBackgroundColor
 
     Item {
@@ -36,10 +41,6 @@ Rectangle {
         }
     }
 
-    ButtonGroup {
-        buttons: buttonsColumn.children
-    }
-
     Column {
         id: buttonsColumn
 
@@ -60,12 +61,11 @@ Rectangle {
 
             enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn
 
-
             icon.name: "oven"
             icon.width: 60
             icon.height: 60
 
-            onClicked: masterController.ui_controlFlow.goRunningView()
+            onClicked: masterController.ui_controlFlow.goOvenManualSet()
         }
 
         IconButton {

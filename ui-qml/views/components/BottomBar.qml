@@ -4,6 +4,9 @@ import Themes 1.0
 Rectangle {
     id: bottomBar
 
+    property alias cameraButton: cameraButton
+    property alias actionButton: actionButton
+
     color: ColorTheme.bottomBarBackgroundColor
 
     IconButton {
@@ -12,14 +15,26 @@ Rectangle {
         width: 62; height: 62
 
         anchors {
-            right: nextButton.left
-            verticalCenter: nextButton.verticalCenter
+            right: actionButton.left
+            verticalCenter: actionButton.verticalCenter
             rightMargin: 40
         }
+
+        visible: false
+
+        showBorder: true
+        showBackground: true
+
+        icon.name: "camera"
+        icon.width: 40
+        icon.height: 40
+
+        onClicked: cameraButton.checked ? masterController.ui_controlFlow.goCameraPreview() :
+                                          masterController.ui_controlFlow.goRunningView()
     }
 
     TextButton {
-        id: nextButton
+        id: actionButton
 
         width: 155
         height: 62
@@ -29,6 +44,8 @@ Rectangle {
             verticalCenter: parent.verticalCenter
             rightMargin: 40
         }
+ 
+        visible: false
 
         radius: width / 4
 
@@ -36,5 +53,7 @@ Rectangle {
         centerTextAligment: true
         textFontSize: TextStyle.bottonBarText_fontSize
         text: qsTr("NEXT")
+
+        onClicked: masterController.ui_controlFlow.actionButtonBottomBarClicked()
     }
 }

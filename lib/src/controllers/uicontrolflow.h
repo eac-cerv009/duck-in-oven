@@ -6,28 +6,32 @@
 
 namespace controllers {
 
-class UiControlFlow : public QObject
-{
-  Q_OBJECT
+  class UiControlFlow : public QObject
+  {
+    Q_OBJECT
 
-public:
-  explicit UiControlFlow(QObject * _parent = nullptr)
-    : QObject(_parent)
-  {}
+  public:
+    explicit UiControlFlow(QObject * _parent = nullptr)
+      : QObject(_parent)
+    {}
 
-signals:
+  signals:
 
-  void goDefaultView();
-  void goOvenManualSet();
-  void goCookbookView();
+    void goDefaultView();
+    void goOvenManualSet();
+    void goCookbookView();
+    void goRecipe();
 
-  void goManualBakeView();
-  void goManualTemperatureView();
-  void goManualTimerView();
-  void goRunningView();
-  void goCameraPreview();
-};
+    void goManualBakeView();
+    void goManualTemperatureView();
+    void goManualTimerView();
+    void goRunningView();
+    void goCameraPreview();
 
+    void goSettingsView();
+
+    void actionButtonBottomBarClicked();
+  };
 }
 
 #endif // UICONTROLFLOW_H

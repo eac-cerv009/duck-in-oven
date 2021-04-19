@@ -8,12 +8,13 @@ import QtQuick.Controls 2.0
 Rectangle {
     id: rightPanel
 
-    implicitWidth: 442; implicitHeight: 548
-    color: ColorTheme.sidePanelBackgroundColor
+    property alias lightButton: lightButton
+    property alias timeRunningButton: timeRunningButton
+    property alias settingsButton: settingsButton
 
-    ButtonGroup {
-        buttons: buttonsColumn.children
-    }
+    implicitWidth: 442; implicitHeight: 548
+
+    color: ColorTheme.sidePanelBackgroundColor
 
     Column {
         id: buttonsColumn
@@ -38,11 +39,11 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            onClicked: masterController.ui_controlFlow.gogoManualTemperatureView()
+            onClicked: masterController.ui_ovenControlState.lightButtonStateChanged(lightButton.checked)
         }
 
         IconButton {
-            id: timerButton
+            id: timeRunningButton
 
             width: parent.width
             height: parent.height / 3
@@ -53,7 +54,7 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            onClicked: masterController.ui_controlFlow.gogoManualTimerView()
+            onClicked: masterController.ui_controlFlow.goRunningView()
         }
 
         IconButton {
@@ -67,6 +68,8 @@ Rectangle {
             icon.name: "settings"
             icon.width: 60
             icon.height: 60
+
+            onClicked:  masterController.ui_controlFlow.goSettingsView()
         }
     }
 
@@ -86,12 +89,11 @@ Rectangle {
             width: parent.width
             height: parent.height / 3
 
-
             icon.name: "bluetooth"
             icon.width: 60
             icon.height: 60
 
-            enabled: false
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn  && masterController.ui_bluetooth.ui_bluetoothAvailable
         }
 
         IconButton {
@@ -104,7 +106,7 @@ Rectangle {
             icon.width: 60
             icon.height: 60
 
-            enabled: false
+            enabled: masterController.ui_ovenControlState.ui_ovenTurnedOn  && masterController.ui_wiFi.ui_wiFiAvailable
         }
     }
 }

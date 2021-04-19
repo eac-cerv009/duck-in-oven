@@ -8,33 +8,39 @@
 #include <lib_global.h>
 #include <controllers/uicontrolflow.h>
 #include <controllers/ovencontrolstate.h>
+#include <controllers/connectivity/bluetooth.h>
+#include <controllers/connectivity/wifi.h>
 
 namespace controllers {
 
-class MasterController : public QObject
-{
-  Q_OBJECT
+  using namespace connectivity;
 
-  //Q_PROPERTY(QString ui_welcomeMessage MEMBER welcomeMessage CONSTANT);
-  Q_PROPERTY(QString ui_welcomeMessage READ welcomeMessage CONSTANT )
-  Q_PROPERTY(controllers::UiControlFlow* ui_controlFlow READ uiControlFlow CONSTANT)
-  Q_PROPERTY(controllers::OvenControlState* ui_ovenControlState READ ovenControlState CONSTANT)
+  class MasterController : public QObject
+  {
+    Q_OBJECT
 
-public:
-  explicit MasterController(QObject* parent = nullptr);
-  ~MasterController();
-  UiControlFlow* uiControlFlow();
-  OvenControlState* ovenControlState();
+    Q_PROPERTY(QString ui_welcomeMessage READ welcomeMessage CONSTANT )
+    Q_PROPERTY(controllers::UiControlFlow* ui_controlFlow READ uiControlFlow CONSTANT)
+    Q_PROPERTY(controllers::OvenControlState* ui_ovenControlState READ ovenControlState CONSTANT)
+    Q_PROPERTY(controllers::connectivity::WiFi* ui_wiFi READ wiFi CONSTANT)
+    Q_PROPERTY(controllers::connectivity::Bluetooth* ui_bluetooth READ bluetooth CONSTANT)
 
-  //QString welcomeMessage = "Hallo aus MasterController";
+  public:
+    explicit MasterController(QObject* parent = nullptr);
+    ~MasterController();
 
-  const QString& welcomeMessage() const;
+    UiControlFlow* uiControlFlow();
+    OvenControlState* ovenControlState();
+    WiFi *wiFi();
+    Bluetooth* bluetooth();
 
-private:
-  class Implementation;
-  QScopedPointer<Implementation> implementation;
+    const QString& welcomeMessage() const;
 
-};
+  private:
+    class Implementation;
+    QScopedPointer<Implementation> implementation;
+
+  };
 
 }
 

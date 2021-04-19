@@ -1,51 +1,75 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.15
+import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.15
+import Themes 1.0
+
+import "components"
 
 Item {
     id: manualTemperatureTimerView
+
+    objectName: "manualTemperatureTimerView"
+
+    Connections {
+        target: masterController.ui_controlFlow
+
+        function onActionButtonBottomBarClicked() {
+            if (stackview.currentIndex == 0) {
+                bar.currentIndex = 1
+                masterController.ui_ovenControlState.ovenTemperatureChoosen(temperatureTab.selectedTemperature);
+            }
+            else if (stackview.currentIndex == 1) {
+                masterController.ui_ovenControlState.ovenTimerChoosen(timerTab.selectedTime);
+                masterController.ui_controlFlow.goRunningView();
+            }
+        }
+    }
 
     Rectangle {
         id: content
 
         anchors.fill: parent
 
-//        width: parent.width; height: 180
-
-//        anchors.top: parent.top
-//        anchors.left: parent.left
-//        anchors.right: parent.right
-
-        color: "#2F2F2F"
+        color: ColorTheme.centerPanelBackgroundColor
 
         TabBar {
             id: bar
             width: parent.width;
 
-            currentIndex: stackview_.currentIndex
-            TabButton {
+            currentIndex: stackview.currentIndex
+
+            TabTitle {
+                id: temperatureTabTitle
+
                 text: qsTr("Temperature")
             }
-            TabButton {
+
+            TabTitle {
+                id: timerTabTitle
+
                 text: qsTr("Timer")
+
+                onClicked: masterController.ui_ovenControlState.ovenTemperatureChoosen(temperatureTab.selectedTemperature);
             }
         }
 
-        //SwipeView {
         StackLayout {
-            id: stackview_
-            width: parent.width; height: 100
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: bar.bottom
-            anchors.bottom: parent.bottom
+            id: stackview
+
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: bar.bottom
+                bottom: parent.bottom
+            }
+
             currentIndex: bar.currentIndex
 
-            ManualTemperatureView {
+            TemperatureSelector {
                 id: temperatureTab
             }
 
-            ManualTimerView {
+            TimerSelector {
                 id: timerTab
             }
         }

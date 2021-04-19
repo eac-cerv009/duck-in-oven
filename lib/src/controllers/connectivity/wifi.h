@@ -3,12 +3,17 @@
 
 #include <QObject>
 
+#include <lib_global.h>
+
 namespace controllers {
   namespace connectivity {
 
     class WiFi : public QObject
     {
       Q_OBJECT
+
+      Q_PROPERTY(bool ui_wiFiAvailable MEMBER wifiAvailable READ isWiFiAvailable CONSTANT)
+
     public:
       explicit WiFi(QObject *parent = nullptr);
 
