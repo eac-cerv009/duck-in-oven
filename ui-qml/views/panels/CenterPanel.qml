@@ -77,6 +77,7 @@ Rectangle {
             if (contentFrame.currentItem.objectName != "defaultView") {
                 contentFrame.replace("qrc:/views/DefaultView.qml")
                 bottomBar.cameraButton.visible = false
+                bottomBar.actionButton.visible = false
             }
         }
     }

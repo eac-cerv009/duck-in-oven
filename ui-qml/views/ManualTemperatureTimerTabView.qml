@@ -48,6 +48,8 @@ Item {
                 id: timerTabTitle
 
                 text: qsTr("Timer")
+
+                onClicked: masterController.ui_ovenControlState.ovenTemperatureChoosen(temperatureTab.selectedTemperature);
             }
         }
 

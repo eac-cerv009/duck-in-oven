@@ -43,13 +43,12 @@ namespace controllers {
     ovenRunning = false;
     lightTurnedOn = false;
 
-    selectedTemperature = 350;
-    selectedTime = 0;
+    selectedTemperature = 425;
+    temperature = QString::number(selectedTemperature);
+    selectedTime = 390000;
+    timerTimeLeft =  QString("%1").arg(1, 2, 10, QChar('0')) + ":"+ QString("%1").arg(30, 2, 10, QChar('0'));
     ovenTimer = new QTimer();
     ovenTimer->setInterval(60000);
-
-    temperature = QString::number(selectedTemperature);
-    timerTimeLeft = QString::number(selectedTime);
 
     this->setConnections();
     updateDateTime->start(5000);
@@ -122,8 +121,10 @@ namespace controllers {
         qDebug() << "Oven START Running";
         ovenTimer->start();
       }
-    else
-      qDebug() << "Oven STOP Running";
+    else{
+        ovenTimer->stop();
+        qDebug() << "Oven STOP Running";
+      }
     emit ovenRunningStateChanged();
   }
 

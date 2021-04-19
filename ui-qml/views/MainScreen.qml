@@ -25,6 +25,13 @@ Window {
         }
     }
 
+    Connections {
+        target: masterController.ui_controlFlow
+        function onGoRunningView() {
+            rightPanel.timeRunningButton.checked = true
+        }
+    }
+
     ButtonGroup {
         id: group
         buttons: [leftPanel.ovenButton, leftPanel.cookbookButton, leftPanel.moreButton,
